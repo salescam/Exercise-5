@@ -1,0 +1,384 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 55,
+   "id": "87604c20-2cfc-4ca6-bb5b-13704f37a6bf",
+   "metadata": {},
+   "outputs": [
+    {
+     "ename": "NameError",
+     "evalue": "name 'G' is not defined",
+     "output_type": "error",
+     "traceback": [
+      "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
+      "\u001b[0;31mNameError\u001b[0m                                 Traceback (most recent call last)",
+      "Input \u001b[0;32mIn [55]\u001b[0m, in \u001b[0;36m<cell line: 7>\u001b[0;34m()\u001b[0m\n\u001b[1;32m      1\u001b[0m \u001b[38;5;66;03m#Exercise 1 - Debug code for calculating GC content\u001b[39;00m\n\u001b[1;32m      2\u001b[0m \u001b[38;5;66;03m#Debug the following code for calculating GC content:\u001b[39;00m\n\u001b[1;32m      3\u001b[0m \n\u001b[1;32m      4\u001b[0m \u001b[38;5;66;03m# Calculate the frequency of G & C nucleotides in a sequence\u001b[39;00m\n\u001b[1;32m      6\u001b[0m seq \u001b[38;5;241m=\u001b[39m \u001b[38;5;124m\"\u001b[39m\u001b[38;5;124mATATGCTACTACTCGGCTACG\u001b[39m\u001b[38;5;124m\"\u001b[39m\n\u001b[0;32m----> 7\u001b[0m gc_content \u001b[38;5;241m=\u001b[39m seq\u001b[38;5;241m.\u001b[39mcount(\u001b[43mG\u001b[49m) \u001b[38;5;241m+\u001b[39m seq\u001b[38;5;241m.\u001b[39mcount(C)\u001b[38;5;241m/\u001b[39m\u001b[38;5;28mlen\u001b[39m(seq)\n",
+      "\u001b[0;31mNameError\u001b[0m: name 'G' is not defined"
+     ]
+    }
+   ],
+   "source": [
+    "#Exercise 1 - Debug code for calculating GC content\n",
+    "#Debug the following code for calculating GC content:\n",
+    "\n",
+    "# Calculate the frequency of G & C nucleotides in a sequence\n",
+    "\n",
+    "seq = \"ATATGCTACTACTCGGCTACG\"\n",
+    "gc_content = seq.count(G) + seq.count(C)/len(seq)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "d7429c21-442a-49b1-831e-ebfa4ce814f0",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "4.285714285714286"
+      ]
+     },
+     "execution_count": 3,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "#Correct answer\n",
+    "#G and C were not in ''\n",
+    "seq = \"ATATGCTACTACTCGGCTACG\"\n",
+    "gc_content = seq.count('G') + seq.count('C')/len(seq)\n",
+    "gc_content"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 5,
+   "id": "961b6e6a-82e8-44f1-bfe0-90b9ed99efe9",
+   "metadata": {},
+   "outputs": [
+    {
+     "ename": "SyntaxError",
+     "evalue": "invalid syntax (704388083.py, line 16)",
+     "output_type": "error",
+     "traceback": [
+      "\u001b[0;36m  Input \u001b[0;32mIn [5]\u001b[0;36m\u001b[0m\n\u001b[0;31m    for i in range(n_birds_to_generate)\u001b[0m\n\u001b[0m                                       ^\u001b[0m\n\u001b[0;31mSyntaxError\u001b[0m\u001b[0;31m:\u001b[0m invalid syntax\n"
+     ]
+    }
+   ],
+   "source": [
+    "#Exercise 2 - Debug a random bird generator\n",
+    "#Debug the following code for generating random bird common names.\n",
+    "\n",
+    "from random import choice\n",
+    "n_birds_to_generate = 10\n",
+    "\n",
+    "descriptors = [\"Emperor\",\"Red-breasted\",\"Warbling\",\"Vampire\",\"Night\",\\\n",
+    "               \"Sea\",\"Greater\",\"Pond\",\"Jungle\",\"Barn\",\"Drab\",\"Lesser\",\"Spotted\",\\\n",
+    "               \"Northern\",\"Southern\",\"Long-beaked\",\"Crested\",\"Fairy\",\"Bald\"]\n",
+    "\n",
+    "bird_types = [\"Falcon\",\"Merganser\",\"Owl\",\"Eagle\",\"Hawk\",\"Penguin\",\\\n",
+    "             \"Dodo\",\"Gull\",\"Warbler\",\"Fowl\",\"Goose\",\"Hummingbird\",\"Snowcock\"]\n",
+    "\n",
+    "random_birds = []\n",
+    "\n",
+    "for i in range(n_birds_to_generate)\n",
+    "    descriptor = choice(descriptors)\n",
+    "\n",
+    "    bird_type = choice(bird_types)\n",
+    "\n",
+    "    random_bird = f\"{descriptor} {bird_type}\"\n",
+    "    random_birds.append(random_bird)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 8,
+   "id": "4dac645b-4b94-4d0e-8f86-f1803fde91f7",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "['Barn Owl', 'Northern Warbler', 'Long-beaked Penguin', 'Night Dodo', 'Spotted Fowl', 'Warbling Eagle', 'Long-beaked Merganser', 'Drab Snowcock', 'Drab Merganser', 'Spotted Snowcock']\n"
+     ]
+    }
+   ],
+   "source": [
+    "from random import choice\n",
+    "n_birds_to_generate = 10\n",
+    "\n",
+    "descriptors = [\"Emperor\",\"Red-breasted\",\"Warbling\",\"Vampire\",\"Night\",\\\n",
+    "               \"Sea\",\"Greater\",\"Pond\",\"Jungle\",\"Barn\",\"Drab\",\"Lesser\",\"Spotted\",\\\n",
+    "               \"Northern\",\"Southern\",\"Long-beaked\",\"Crested\",\"Fairy\",\"Bald\"]\n",
+    "\n",
+    "bird_types = [\"Falcon\",\"Merganser\",\"Owl\",\"Eagle\",\"Hawk\",\"Penguin\",\\\n",
+    "             \"Dodo\",\"Gull\",\"Warbler\",\"Fowl\",\"Goose\",\"Hummingbird\",\"Snowcock\"]\n",
+    "\n",
+    "random_birds = []\n",
+    "\n",
+    "for i in range(n_birds_to_generate):\n",
+    "    descriptor = choice(descriptors)\n",
+    "\n",
+    "    bird_type = choice(bird_types)\n",
+    "\n",
+    "    random_bird = f\"{descriptor} {bird_type}\"\n",
+    "    random_birds.append(random_bird)\n",
+    "print(random_birds)\n",
+    "#There was no : to begin the for loop"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 15,
+   "id": "2e55e40f-b468-4783-8a72-ac1785bc00ce",
+   "metadata": {},
+   "outputs": [
+    {
+     "ename": "SyntaxError",
+     "evalue": "invalid syntax (20336752.py, line 18)",
+     "output_type": "error",
+     "traceback": [
+      "\u001b[0;36m  Input \u001b[0;32mIn [15]\u001b[0;36m\u001b[0m\n\u001b[0;31m    sperm_allele = choice(paternal_alleles)\u001b[0m\n\u001b[0m    ^\u001b[0m\n\u001b[0;31mSyntaxError\u001b[0m\u001b[0;31m:\u001b[0m invalid syntax\n"
+     ]
+    }
+   ],
+   "source": [
+    "#Exercise 3 Debug code for simulating Mendelian Inheritance\n",
+    "#Debug the following code. Note that there is more than one mistake with the code that you will need to fix.\n",
+    "\n",
+    "#This code simules Mendelian inheritance\n",
+    "#Each parent has two alleles or genetic variants: A and a\n",
+    "\n",
+    "#Each gamete (sperm or egg) gets one random allele from\n",
+    "#the parent that produced that gamete\n",
+    "\n",
+    "#The offspring genotype is a combination of these\n",
+    "\n",
+    "from random import choice\n",
+    "\n",
+    "maternal_alleles = [\"A\",\"a\"]\n",
+    "paternal_alleles = [\"A\",\"a\"]\n",
+    "\n",
+    "egg_allele = choice(maternal_alleles\n",
+    "sperm_allele = choice(paternal_alleles)\n",
+    "\n",
+    "offspring_genotype = sorted(egg_allele + sperm_alele)\n",
+    "print(f\"The genotype of the offspring is {offspring_genotype}\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 12,
+   "id": "ecb62de1-3305-4e48-9cc5-dee874e8a80a",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "The genotype of the offspring is ['A', 'A']\n"
+     ]
+    }
+   ],
+   "source": [
+    "from random import choice\n",
+    "\n",
+    "maternal_alleles = [\"A\",\"a\"]\n",
+    "paternal_alleles = [\"A\",\"a\"]\n",
+    "\n",
+    "egg_allele = choice(maternal_alleles)\n",
+    "sperm_allele = choice(paternal_alleles)\n",
+    "\n",
+    "offspring_genotype = sorted(egg_allele + sperm_allele)\n",
+    "print(f\"The genotype of the offspring is {offspring_genotype}\")\n",
+    "#There was a missing parenthesis after (maternal_alleles\n",
+    "#There was also a type for alleles"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "e3bca4c3-ff4b-4e77-9f41-d94e66fc1b86",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "Exercise 4 - Debug broken code for outputting genome analysis results\n",
+    "Debug the following code that merges the results of a genomic analysis into a tab-delimited output line:\n",
+    "\n",
+    "#Imagine we'd calculated several parameters for the genome\n",
+    "header_fields = [\"Genus\",\"Species\",\"Strain\",\"Chromosome Type\",\"Genome Length\",\"Coding Regions\",\"GC content\"]\n",
+    "header_line = \"\\t\".join(header_fields)+\"\\n\"\n",
+    "print(header_line)\n",
+    "\n",
+    "\n",
+    "#Most commonly, this type of code would be inside a for loop\n",
+    "#where we were analyzing many genomes, and generating one line of \n",
+    "#results per genome analyzed.\n",
+    "#(here I just hard-code the results for simplicity). \n",
+    "\n",
+    "gc_content = 57.0\n",
+    "genome_length_nt = 4195195\n",
+    "chromosome_type = \"circular\"\n",
+    "coding_regions = 4276\n",
+    "\n",
+    "#Get the genus name and species name from the full strain id\n",
+    "strain_id = \"Bacillus subtilis SZMC 6179J\"\n",
+    "genus,species,strain_id_part1,strain_id_part2 = strain_id.split()\n",
+    "\n",
+    "result_fields = [genus,species,strain_id,chromosome_type,genome_length_nt,coding_regions,gc_content]\n",
+    "result_line = \"\\t\".join(result_fields) + \"\\n\"\n",
+    "print(result_line)\n",
+    "\n",
+    "#We would go on to open a results file\n",
+    "#and write the results to it."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 24,
+   "id": "b02d9e26-d45b-4d70-ac33-6ff8f95f3c2e",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Genus\tSpecies\tStrain\tChromosome Type\tGenome Length\tCoding Regions\tGC content\n",
+      "\n",
+      "Bacillus subtilis SZMC 6179J\n",
+      "\n"
+     ]
+    }
+   ],
+   "source": [
+    "\n",
+    "header_fields = [\"Genus\",\"Species\",\"Strain\",\"Chromosome Type\",\"Genome Length\",\"Coding Regions\",\"GC content\"]\n",
+    "header_line = '\\t'.join(header_fields)+\"\\n\"\n",
+    "print(header_line)\n",
+    "\n",
+    "gc_content = 57.0\n",
+    "genome_length_nt = 4195195\n",
+    "chromosome_type = \"circular\"\n",
+    "coding_regions = 4276\n",
+    "\n",
+    "strain_id = \"Bacillus subtilis SZMC 6179J\"\n",
+    "genus,species,strain_id_part1,strain_id_part2 = strain_id.split()\n",
+    "\n",
+    "result_fields = [strain_id]\n",
+    "result_line = \"\\t\".join(result_fields) + \"\\n\"\n",
+    "print(result_line)\n",
+    "\n",
+    "#Put strain_id in the result_field =[] instead of all of the headers\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 47,
+   "id": "c676b227-5d85-43a4-856a-14b9d34d4527",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Homo sapiens is a Mammal\n",
+      "Gallus gallus is a Bird\n",
+      "Bacillus thuringiensis is a Bacterium\n"
+     ]
+    },
+    {
+     "ename": "ValueError",
+     "evalue": "too many values to unpack (expected 2)",
+     "output_type": "error",
+     "traceback": [
+      "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
+      "\u001b[0;31mValueError\u001b[0m                                Traceback (most recent call last)",
+      "Input \u001b[0;32mIn [47]\u001b[0m, in \u001b[0;36m<cell line: 11>\u001b[0;34m()\u001b[0m\n\u001b[1;32m      8\u001b[0m common_name_map \u001b[38;5;241m=\u001b[39m {\u001b[38;5;124m\"\u001b[39m\u001b[38;5;124mHomo\u001b[39m\u001b[38;5;124m\"\u001b[39m:\u001b[38;5;124m\"\u001b[39m\u001b[38;5;124mMammal\u001b[39m\u001b[38;5;124m\"\u001b[39m,\u001b[38;5;124m\"\u001b[39m\u001b[38;5;124mGallus\u001b[39m\u001b[38;5;124m\"\u001b[39m:\u001b[38;5;124m\"\u001b[39m\u001b[38;5;124mBird\u001b[39m\u001b[38;5;124m\"\u001b[39m,\u001b[38;5;124m\"\u001b[39m\u001b[38;5;124mBacillus\u001b[39m\u001b[38;5;124m\"\u001b[39m:\u001b[38;5;124m\"\u001b[39m\u001b[38;5;124mBacterium\u001b[39m\u001b[38;5;124m\"\u001b[39m,\\\n\u001b[1;32m      9\u001b[0m                    \u001b[38;5;124m\"\u001b[39m\u001b[38;5;124mPorites\u001b[39m\u001b[38;5;124m\"\u001b[39m:\u001b[38;5;124m\"\u001b[39m\u001b[38;5;124mStony coral\u001b[39m\u001b[38;5;124m\"\u001b[39m,\u001b[38;5;124m\"\u001b[39m\u001b[38;5;124mAcropora\u001b[39m\u001b[38;5;124m\"\u001b[39m:\u001b[38;5;124m\"\u001b[39m\u001b[38;5;124mStony coral\u001b[39m\u001b[38;5;124m\"\u001b[39m}\n\u001b[1;32m     11\u001b[0m \u001b[38;5;28;01mfor\u001b[39;00m binomial_name \u001b[38;5;129;01min\u001b[39;00m species:\n\u001b[0;32m---> 12\u001b[0m     genus,species \u001b[38;5;241m=\u001b[39m binomial_name\u001b[38;5;241m.\u001b[39msplit(maxsplit\u001b[38;5;241m=\u001b[39m\u001b[38;5;241m2\u001b[39m)\n\u001b[1;32m     13\u001b[0m     common_taxon_name \u001b[38;5;241m=\u001b[39m common_name_map[genus]\n\u001b[1;32m     14\u001b[0m     \u001b[38;5;28mprint\u001b[39m(\u001b[38;5;124mf\u001b[39m\u001b[38;5;124m\"\u001b[39m\u001b[38;5;132;01m{\u001b[39;00mbinomial_name\u001b[38;5;132;01m}\u001b[39;00m\u001b[38;5;124m is a \u001b[39m\u001b[38;5;132;01m{\u001b[39;00mcommon_taxon_name\u001b[38;5;132;01m}\u001b[39;00m\u001b[38;5;124m\"\u001b[39m)\n",
+      "\u001b[0;31mValueError\u001b[0m: too many values to unpack (expected 2)"
+     ]
+    }
+   ],
+   "source": [
+    "#Exercise 5 - Debug code for mapping scientific names into common taxon names\n",
+    "#Hint: there are 3 mistakes with the code that you'll need to fix. The first two are straightforward. Fix them first, and you will encounter the 3rd bug, which is a bit more subtle.\n",
+    "\n",
+    "#Look up an informal, non-scientific common name for each species\n",
+    "species = [\"Homo sapiens\",\"Gallus gallus\",\"Bacillus thuringiensis\",\\\n",
+    "           \"Bacillus subtilis SZMC 6179J\",\"Porites asteroides\",\"Acropora palmata\"]\n",
+    "\n",
+    "common_name_map = {\"Homo\":\"Mammal\",\"Gallus\":\"Bird\",\"Bacillus\":\"Bacterium\",\\\n",
+    "                   \"Porites\":\"Stony coral\",\"Acropora\":\"Stony coral\"}\n",
+    "\n",
+    "for binomial_name in species:\n",
+    "    genus,species = binomial_name.split(maxsplit=2)\n",
+    "    common_taxon_name = common_name_map[genus]\n",
+    "    print(f\"{binomial_name} is a {common_taxon_name}\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 53,
+   "id": "3e6b1897-6f6d-4ea6-b487-2b452e935f5e",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Homo sapiens is a Mammal\n",
+      "Gallus gallus is a Bird\n",
+      "Bacillus thuringiensis is a Bacterium\n",
+      "Bacillus subtilis SZMC 6179J is a Bacterium\n",
+      "Porites asteroides is a Stony coral\n",
+      "Acropora palmata is a Stony coral\n"
+     ]
+    }
+   ],
+   "source": [
+    "species = [\"Homo sapiens\",\"Gallus gallus\",\"Bacillus thuringiensis\",\\\n",
+    "           \"Bacillus subtilis SZMC 6179J\",\"Porites asteroides\",\"Acropora palmata\"]\n",
+    "\n",
+    "common_name_map = {\"Homo\":\"Mammal\",\"Gallus\":\"Bird\",\"Bacillus\":\"Bacterium\",\\\n",
+    "                   \"Porites\":\"Stony coral\",\"Acropora\":\"Stony coral\"}\n",
+    "\n",
+    "for binomial_name in species:\n",
+    "    genus,species = binomial_name.split(maxsplit=1)\n",
+    "    common_taxon_name = common_name_map[genus]\n",
+    "    print(f\"{binomial_name} is a {common_taxon_name}\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "ef9f057e-e901-4085-b4ea-08e29082fe1c",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "anaconda-2022.05-py39",
+   "language": "python",
+   "name": "conda-env-anaconda-2022.05-py39-py"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.9.12"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
